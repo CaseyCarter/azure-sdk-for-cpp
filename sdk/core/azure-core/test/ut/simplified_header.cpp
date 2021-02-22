@@ -8,6 +8,12 @@
  *
  */
 
+// Verify that including windows.h, which defines "min" and "max" as macros, does not fail any code
+// in SDK headers.
+#if defined(_MSC_VER)
+#include <windows.h>
+#endif // _MSC_VER
+
 #include <azure/core.hpp>
 #include <gtest/gtest.h>
 
